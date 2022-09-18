@@ -1,0 +1,116 @@
+<head>
+    <script>
+        function contar(val){
+            location.href="/teste2/"+document.getElementById("idvalor").value;
+        }
+    </script>
+
+<style>
+div{
+widht: 100px;
+heght: 100px;
+display: inline-block;
+margin: 2px;
+}
+#div1 {
+}
+#div2 {
+}
+</style>
+
+</head>
+
+ <div id="div1">
+<form action="/gravar" method="POST">
+<fieldset>
+    <legend>Efetuar Registros</legend>
+    <div class="container-flex">
+        <form>
+            <label>Nome:</label></br>
+            <input type="text" name="nome" value=""/>
+            <label>Data Nascimento:</label>
+            <input type="date" name="datanasc" value=""/>
+        </form>
+    </div> </br>
+
+    <label>Email:</label></br>
+    <input type="email" name="email" value=""/></br>
+
+    <label>Senha:</label></br>
+    <input type="text" name="Senha" value=""/></br>
+
+    <label>Sexo:</br>
+          <input type="text" name="sexo" list="country-names" value=""/></br>
+          <datalist id="country-names">
+            <option label="Masculino" value="Masculino"></option>
+            <option label="Feminino" value="Feminino"></option>
+          </datalist>
+    </label>
+    
+    <label>Telefone Residencial:</label></br>
+    <input type="text" name="telefone" value=""/></br>
+    <label>Celular:</label></br>
+    <input type="text" name="celular" value=""/></br>
+
+    <label>Fumante:</br>
+          <input type="text" name="fumante" list="confirma" value=""/></br>
+          <datalist id="confirma">
+            <option label="Sim" value="Sim"></option>
+            <option label="Não" value="Não"></option>
+          </datalist>
+    </label>
+
+    <label>Municipio de origem:</label></br>
+    <input type="text" name="municipio" value=""/></br></br>
+
+    <input type="submit" value="Salvar"/>
+</fieldset>
+</form>
+</div>
+
+<div id="div2">
+<form action="/buscarTodos" method="GET">
+<fieldset>
+    <legend>Dados</legend>
+    <div class="container-flex">
+        <form>
+            <label>Nome:</label></br>
+            <input type="text" name="nome" disabled value="{{nome}}"/>
+            <label>Data Nascimento:</label>
+            <input type="date" name="datanasc" disabled value="{{datanasc}}"/>
+        </form>
+    </div> </br>
+
+    <label>Email:</label></br>
+    <input type="email" name="email" disabled value="{{email}}"/></br>
+
+    <label>Senha:</label></br>
+    <input type="text" name="naoinformar" disabled value="{{senha}}"/></br>
+
+    <label>Sexo:</br>
+          <input type="text" name="sexo" list="country-names" disabled value="{{sexo}}"/></br>
+          <datalist id="country-names">
+            <option label="Masculino" value="Masculino"></option>
+            <option label="Feminino" value="Feminino"></option>
+          </datalist>
+    </label>
+    
+    <label>Telefone Residencial:</label></br>
+    <input type="text" name="telefone" disabled value="{{telefone}}"/></br>
+    <label>Celular:</label></br>
+    <input type="text" name="celular" disabled value="{{celular}}"/></br>
+
+    <label>Fumante:</br>
+          <input type="text" name="fumante" list="confirma" disabled value="{{fumante}}"/></br>
+          <datalist id="confirma">
+            <option label="Sim" value="Sim"></option>
+            <option label="Não" value="Não"></option>
+          </datalist>
+    </label>
+    <label>Municipio de origem:</label></br>
+    <input type="text" name="municipio" disabled value="{{municipio}}"/></br></br>
+
+    <input type="submit" value="Buscar"/>
+</fieldset>
+</form>
+</div>
